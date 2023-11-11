@@ -20,7 +20,7 @@ export function buildWebpackConfig(options:IBuildOptions){
         module: {
             rules: buildLoaders(options),
         },
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         plugins: buildPlugins(options),
     }
 }
