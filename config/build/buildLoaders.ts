@@ -30,9 +30,25 @@ export function buildLoaders(options:IBuildOptions){
         ],
     };
 
+    const svgLoader ={
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            use: ['@svgr/webpack'],
+    };
+
+    const fileLoader = {
+            test: /\.(png|jpe?g|gif|woff|woff2|tff|otf)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                },
+            ],
+    };
+
     return [
         typescriptLoader,
         stylesLoader,
-
+        svgLoader,
+        fileLoader
     ]
 }
