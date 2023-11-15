@@ -12,7 +12,7 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
 }
 
 export const Button:FC<IButtonProps> = (props: IButtonProps) => {
-    const {className, children, theme=EButtonTheme.CLEAR, ...attrs} = props;
+    const {className, children, theme, ...attrs} = props;
     return (
         <button
             className={classNames(cls.Button, {}, [className, cls[`Button--${theme}`]])}

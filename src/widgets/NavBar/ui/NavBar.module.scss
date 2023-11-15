@@ -1,6 +1,6 @@
 .NavBar {
   width: 100%;
-  height: 50px;
+  height: var(--navbar-height);
   background-color: var(--inverted-color);
   display: flex;
   align-items: center;
@@ -20,5 +20,15 @@
   &__themeSwitcher {
     width: 24px;
     height: 24px;
+  }
+
+  &__langSwitcher {
+    color: var(--bg-color);
+  }
+
+  &__switchers {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
   }
 }
