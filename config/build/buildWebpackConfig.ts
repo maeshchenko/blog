@@ -1,11 +1,11 @@
-import {IBuildOptions} from "./types/config";
-import {buildLoaders} from "./buildLoaders";
-import {buildResolvers} from "./buildResolvers";
-import {buildPlugins} from "./buildPlugins";
-import {buildDevServer} from "./buildDevServer";
-import {buildOptimization} from "./buildOptimization";
+import { type IBuildOptions } from './types/config';
+import { buildLoaders } from './buildLoaders';
+import { buildResolvers } from './buildResolvers';
+import { buildPlugins } from './buildPlugins';
+import { buildDevServer } from './buildDevServer';
+import { buildOptimization } from './buildOptimization';
 
-export function buildWebpackConfig(options:IBuildOptions){
+export function buildWebpackConfig (options: IBuildOptions) {
     return {
         'mode': options.mode,
         entry: options.paths.entry,
@@ -15,12 +15,12 @@ export function buildWebpackConfig(options:IBuildOptions){
         output: {
             clean: true,
             filename: '[name].[contenthash].js',
-            path: options.paths.build,
-        },
+            path: options.paths.build
+    },
         module: {
-            rules: buildLoaders(options),
-        },
+            rules: buildLoaders(options)
+    },
         resolve: buildResolvers(options),
-        plugins: buildPlugins(options),
-    }
+        plugins: buildPlugins(options)
+  };
 }

@@ -1,15 +1,15 @@
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './NavBar.module.scss';
-import {AppLink} from "shared/ui/AppLink/AppLink";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
-import {LangSwitcher} from "widgets/LangSwitcher";
-import {useTranslation} from "react-i18next";
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
+import { useTranslation } from 'react-i18next';
 
 export interface INavBarProps {
-   className?: string;
+  className?: string
 }
 
-export const NavBar = ({className}: INavBarProps) => {
+export const NavBar = ({ className }: INavBarProps) => {
     const { t, i18n } = useTranslation();
     return (
         <div className={classNames(cls.NavBar, {}, [className])}>
@@ -22,5 +22,5 @@ export const NavBar = ({className}: INavBarProps) => {
                 <AppLink to={'/about'} className={cls.NavBar__link}>{t('about')}</AppLink>
             </ul>
         </div>
-    )
-}
+    );
+};

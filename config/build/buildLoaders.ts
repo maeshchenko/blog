@@ -1,12 +1,12 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {IBuildOptions} from "./types/config";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { type IBuildOptions } from './types/config';
 
-export function buildLoaders(options:IBuildOptions){
+export function buildLoaders (options: IBuildOptions) {
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
-    };
+        exclude: /node_modules/
+  };
 
     const stylesLoader = {
         test: /\.s[ac]ss$/i,
@@ -17,7 +17,7 @@ export function buildLoaders(options:IBuildOptions){
                 loader: 'css-loader',
                 options: {
                     modules: {
-                        auto: (path:string)=>Boolean(path.includes('.module.scss')),
+                        auto: (path: string) => Boolean(path.includes('.module.scss')),
                         localIdentName: options.isDev
                             ? '[path][name]__[local]--[hash:base64:8]'
                             : '[hash:base64:8]'
@@ -30,19 +30,19 @@ export function buildLoaders(options:IBuildOptions){
         ],
     };
 
-    const svgLoader ={
-            test: /\.svg$/i,
-            issuer: /\.[jt]sx?$/,
-            use: ['@svgr/webpack'],
-    };
+    const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ['@svgr/webpack']
+  };
 
     const fileLoader = {
-            test: /\.(png|jpe?g|gif|woff|woff2|tff|otf)$/i,
-            use: [
-                {
-                    loader: 'file-loader',
-                },
-            ],
+    test: /\.(png|jpe?g|gif|woff|woff2|tff|otf)$/i,
+    use: [
+      {
+        loader: 'file-loader'
+            },
+    ],
     };
 
     return [
@@ -50,5 +50,5 @@ export function buildLoaders(options:IBuildOptions){
         stylesLoader,
         svgLoader,
         fileLoader
-    ]
+    ];
 }
