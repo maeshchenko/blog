@@ -1,14 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ThemeSwitcher.module.scss';
-import { useTheme } from 'app/providers/ThemeProvider';
-import ContrastIcon from 'shared/assets/contrast-symbol.svg';
-import { Button, EButtonTheme } from 'shared/ui/Button';
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./ThemeSwitcher.module.scss";
+import { useTheme } from "app/providers/ThemeProvider";
+import ContrastIcon from "shared/assets/contrast-symbol.svg";
+import { Button, EButtonTheme } from "shared/ui/Button";
+import { type FC, type JSX } from "react";
 
 export interface IThemeSwitcherProps {
-  className?: string
+    className?: string;
 }
 
-export const ThemeSwitcher = ({ className }: IThemeSwitcherProps) => {
+export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({
+    className,
+}): JSX.Element => {
     const { toggleTheme } = useTheme();
 
     return (
@@ -17,7 +20,7 @@ export const ThemeSwitcher = ({ className }: IThemeSwitcherProps) => {
             onClick={toggleTheme}
             theme={EButtonTheme.CLEAR}
         >
-            <ContrastIcon className={cls.ThemeSwitcher__icon}/>
+            <ContrastIcon className={cls.ThemeSwitcher__icon} />
         </Button>
     );
 };

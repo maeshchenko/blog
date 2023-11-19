@@ -1,9 +1,11 @@
-import TerserPlugin from 'terser-webpack-plugin';
+import TerserPlugin from "terser-webpack-plugin";
 
-export function buildOptimization () {
+export function buildOptimization() {
     return {
-        minimizer: [new TerserPlugin({
-            extractComments: false
-    })]
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+        ],
     };
 }

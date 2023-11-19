@@ -1,18 +1,26 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './SideBar.module.scss';
-import { useState } from 'react';
-import { Button } from 'shared/ui/Button';
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./SideBar.module.scss";
+import { type FC, type JSX, useState } from "react";
+import { Button } from "shared/ui/Button";
 
 export interface ISideBarProps {
-  className?: string
+    className?: string;
 }
 
-export const SideBar = ({ className }: ISideBarProps) => {
+export const SideBar: FC<ISideBarProps> = ({ className }): JSX.Element => {
     const [isCollapsed, setIsCollapsed] = useState(false);
-    const onToggle = () => { setIsCollapsed(prev => !prev); };
+    const onToggle = (): void => {
+        setIsCollapsed((prev) => !prev);
+    };
 
     return (
-        <div className={classNames(cls.SideBar, { [cls['SideBar--collapsed']]: isCollapsed }, [className])}>
+        <div
+            className={classNames(
+                cls.SideBar,
+                { [cls["SideBar--collapsed"]]: isCollapsed },
+                [className],
+            )}
+        >
             <Button onClick={onToggle}>Toggle sidebar</Button>
         </div>
     );

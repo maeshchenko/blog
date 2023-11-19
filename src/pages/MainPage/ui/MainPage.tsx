@@ -1,16 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './MainPage.module.scss';
-import { useTranslation } from 'react-i18next';
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./MainPage.module.scss";
+import { useTranslation } from "react-i18next";
+import { type FC, type JSX } from "react";
 
 export interface IMainPageProps {
-  className?: string
+    className?: string;
 }
 
-const MainPage = ({ className }: IMainPageProps) => {
-    const { t, i18n } = useTranslation('main');
+const MainPage: FC<IMainPageProps> = ({ className }): JSX.Element => {
+    const { t } = useTranslation("main");
     return (
         <div className={classNames(cls.MainPage, {}, [className])}>
-            {t('main_page_title')}
+            {t("main_page_title")}
         </div>
     );
 };
