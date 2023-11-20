@@ -1,9 +1,9 @@
 .AppLink {
-  &--primary {
-    color: var(--bg-color);
-  }
+    &--primary {
+        color: var(--bg-color);
+    }
 
-  &--secondary {
-   color: var(--inverted-color)
-  }
+    &--secondary {
+        color: var(--inverted-color)
+    }
 }

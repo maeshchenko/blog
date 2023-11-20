@@ -17,7 +17,7 @@ export const Button: FC<IButtonProps> = (props: IButtonProps) => {
         <button
             className={classNames(cls.Button, {}, [
                 className,
-                cls[`Button--${theme}`],
+                cls[`${theme}`],
             ])}
             {...attrs}
         >
