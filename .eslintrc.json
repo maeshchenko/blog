@@ -6,7 +6,8 @@
     "extends": [
         "@gravity-ui/eslint-config",
         "@gravity-ui/eslint-config/client",
-        "@gravity-ui/eslint-config/a11y"
+        "@gravity-ui/eslint-config/a11y",
+        "plugin:i18next/recommended"
     ],
     "root": true,
     "parserOptions": {
@@ -15,7 +16,8 @@
         "parser": "babel-eslint"
     },
     "plugins": [
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "semi": "off",
@@ -23,7 +25,7 @@
         "indent": ["error", 4],
         "@typescript-eslint/indent": ["error", 4],
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/naming-convention": 1
+        "@typescript-eslint/naming-convention": 1,
     },
     "settings": {
         "react": {
