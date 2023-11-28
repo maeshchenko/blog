@@ -8,6 +8,17 @@ export function buildLoaders(options: IBuildOptions) {
         exclude: /node_modules/,
     };
 
+    const babelLoader = {
+        test: /\.(js|jsx|ts)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env']
+            }
+        }
+    };
+
     const stylesLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -44,5 +55,5 @@ export function buildLoaders(options: IBuildOptions) {
         ],
     };
 
-    return [typescriptLoader, stylesLoader, svgLoader, fileLoader];
+    return [babelLoader, typescriptLoader, stylesLoader, svgLoader, fileLoader];
 }

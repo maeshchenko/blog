@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": [
         "@gravity-ui/eslint-config",
@@ -25,7 +26,7 @@
         "indent": ["error", 4],
         "@typescript-eslint/indent": ["error", 4],
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/naming-convention": 1,
+        "@typescript-eslint/naming-convention": 1
     },
     "settings": {
         "react": {

@@ -8,7 +8,15 @@ export function classNames(
     const modsValues = Object.entries(mods)
         .filter(([_, value]) => Boolean(value))
         .map(([className, _]) => className);
-    return [cls, [...additional].filter(Boolean), ...modsValues].join(
-        " ",
-    );
+    const filteredAdditional = [...additional].filter(Boolean);
+
+    if(filteredAdditional.length === 0){
+        if(modsValues.length === 0){
+            return cls;
+        }
+
+        return [cls, ...modsValues].join(" ");
+    }
+
+    return [cls, [...additional].filter(Boolean), ...modsValues].join(" ");
 }
