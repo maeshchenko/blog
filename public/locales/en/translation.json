@@ -2,5 +2,6 @@
   "lang": "EN",
   "main": "Main",
   "about": "About site",
-  "toggle-sidebar": "Toggle sidebar"
+  "toggle-sidebar": "Toggle sidebar",
+  "page_not_found": "Page not found"
 }

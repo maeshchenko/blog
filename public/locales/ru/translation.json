@@ -2,5 +2,6 @@
   "lang": "RU",
   "main": "Главная",
   "about": "О сайте",
-  "toggle-sidebar": "Тоггл сайдбара"
+  "toggle-sidebar": "Тоггл сайдбара",
+  "page_not_found": "Страница не найдена"
 }
