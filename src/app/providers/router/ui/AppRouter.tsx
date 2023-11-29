@@ -12,11 +12,10 @@ export const AppRouter: FC = () => {
                     path={path}
                     element={
                         <div className={"page-wrapper"}>
-                            <LoadingWrapper/>
+                            <Suspense fallback={<LoadingWrapper/>}>
+                                {element}
+                            </Suspense>
                         </div>
-                        // <Suspense fallback={<LoadingWrapper/>}>
-                        //     <div className="page-wrapper">{element}</div>
-                        // </Suspense>
                     }
                 />
             ))}
